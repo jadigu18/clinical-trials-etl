@@ -58,44 +58,29 @@ The project follows a layered approach:
 * Python
 * pandas
 * PostgreSQL
-* psycopg2
 * Docker
 
 ---
 
 # Local Setup
 
+## Prerequisites
+Docker installed
+
+Docker Compose installed
+
 ## 1. Clone repository
 
 ```bash
-git clone <repo_url>
+git clone https://github.com/jadigu18/clinical-trials-etl.git
 cd clinical-trials-etl
 ```
 
 ---
 
-## 2. Start PostgreSQL with Docker
 
-```bash
-docker run --name clinical-postgres \
--e POSTGRES_DB=clinical \
--e POSTGRES_USER=admin \
--e POSTGRES_PASSWORD=admin \
--p 5432:5432 \
--d postgres
-```
 
----
-
-## 3. Install dependencies
-
-```bash
-pip install pandas psycopg2
-```
-
----
-
-## 4. Add dataset
+## 2. Add dataset
 
 Place the CSV file inside:
 
@@ -103,15 +88,14 @@ Place the CSV file inside:
 /data/COVID clinical trials.csv
 ```
 
----
 
-## 5. Run pipeline
+## 3. Build and start Docker from project directory
 
 ```bash
-python main.py
-```
+docker compose build
+docker compose up -d
 
----
+```
 
 # Database Design
 
