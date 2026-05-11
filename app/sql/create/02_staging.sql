@@ -1,0 +1,35 @@
+-- 02_staging.sql
+
+CREATE TABLE IF NOT EXISTS staging.raw_trials (
+    _id          BIGSERIAL    PRIMARY KEY,
+    _loaded_at   TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    _source_file TEXT,
+
+    rank                        TEXT,
+    nct_number                  TEXT,
+    title                       TEXT,
+    acronym                     TEXT,
+    status                      TEXT,
+    study_results               TEXT,
+    conditions                  TEXT,
+    interventions               TEXT,
+    outcome_measures            TEXT,
+    sponsor_collaborators       TEXT,
+    gender                      TEXT,
+    age                         TEXT,
+    phases                      TEXT,
+    enrollment                  TEXT,
+    funded_bys                  TEXT,
+    study_type                  TEXT,
+    study_designs               TEXT,
+    other_ids                   TEXT,
+    start_date                  TEXT,
+    primary_completion_date     TEXT,
+    completion_date             TEXT,
+    first_posted                TEXT,
+    results_first_posted        TEXT,
+    last_update_posted          TEXT,
+    locations                   TEXT,
+    study_documents             TEXT,
+    url                         TEXT
+);
